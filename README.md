@@ -27,12 +27,12 @@
 |--------------------|---------------------|-------------------------|
 | product            | string              | null: false             |
 | product description| text                | null: false             |
-| category           | string              | null: false             |
-| product status     | string              | null: false             |
-| price 　　　　      | integer             | null: false             |
-| delivery charge    | integer             | null: false             |
-| area               | integer             | null: false             |
-| days               | integer             | null: false             |
+| category_id        | integer             | null: false             |
+| product status_id  | integer             | null: false             |
+| price_id 　　　     | integer             | null: false             |
+| delivery charge_id | integer             | null: false             |
+| area_id            | integer             | null: false             |
+| days_id            | integer             | null: false             |
 
 ### Association
 
@@ -43,9 +43,8 @@
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| who                | string              | null: false             |
-| when               | string              | null: false             |
-| buys               | string              | null: false             |
+| user_id            | string              | null: false             |
+| item_id            | string              | null: false             |
 
 
 ### Association
