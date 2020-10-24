@@ -1,24 +1,71 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# REAADM
 
-* Ruby version
+## users_table
 
-* System dependencies
+| Column                  | Type                | Options                 |
+|--------------------     |---------------------|-------------------------|
+| nickname                | string              | null: false             |
+| sex_Chinese characters  | string              | null: false             |
+| name_Chinese characters | string              | null: false             |
+| sex_furigana            | string              | null: false             |
+| name_furigana           | string              | null: false             |
+| email                   | string              | null: false ,unique: true|
+| password                | string              | null: false             |
+| birthday 　　            | date                | null: false             |
 
-* Configuration
+### Association
 
-* Database creation
+- has_many:items
+- has_many:purchse records
 
-* Database initialization
 
-* How to run the test suite
+## items_table
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| product            | string              | null: false             |
+| product_description| text                | null: false             |
+| category_id        | integer             | null: false             |
+| product status_id  | integer             | null: false             |
+| price    　　　     | integer             | null: false             |
+| delivery charge_id | integer             | null: false             |
+| area_id            | integer             | null: false             |
+| days_id            | integer             | null: false             |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to:users
+- has_one:purchase records
+
+##　purchase_records_table
+
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| user_id            | string              | foreign_key: true       |
+| item_id            | string              | foreign_key: true       |
+
+
+### Association
+
+- belongs_to:users
+- belongs_to:items
+- has_one:street adress
+
+
+##　street_adress_table
+
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| postal_code        | string              | null: false             |
+| prefectures        | string              | null: false             |
+| municipality       | string              | null: false             |
+| address            | string              | null: false             |
+| builing_name       | string              |                         |
+| phone_number       | string              | null: false             |
+
+
+### Association
+
+- belongs_to:purchase_records
